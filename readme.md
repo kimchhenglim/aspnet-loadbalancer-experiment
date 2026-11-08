@@ -5,7 +5,7 @@
 1. $ docker compose up -d --build
 2. $ docker compose restart nginx
 ### Switch replica without editing the file
-1. $ docker compose up -d --scale flcapp=1         #Stops 2 replicas, leaves 1 running, It lets you switch between 1 and 3 replicas without editing the file
+Run $ docker compose up -d --scale flcapp=1         #Stops 2 replicas, leaves 1 running, It lets you switch between 1 and 3 replicas without editing the file
 
 # Test
 1. Install K6
@@ -13,15 +13,15 @@
 3. Run test with load balancer use: $ k6 run test_js.js
 
 # Check docker performance
-1. > docker stats
+Run $ docker stats
 
 # Confirm the limit of CPU is applied, 1 CPU = 1000000000
-$ docker inspect -f "{{.Name}}  {{.HostConfig.NanoCpus}}" $(docker compose ps -q flcapp)
+Run $ docker inspect -f "{{.Name}}  {{.HostConfig.NanoCpus}}" $(docker compose ps -q flcapp)
 
 # Dispose
-1. $ docker compose down
+Run $ docker compose down
 ## Clean build
-1. docker builder prune -a
+Run docker builder prune -a
 
 
 # RESULT
